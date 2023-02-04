@@ -1,0 +1,255 @@
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	height: 100vh;
+}
+
+.marca {
+	background-color: #ccc;
+	height: 3%;
+	text-align: center;
+	width: 20%;
+	font-size: 1.2rem
+}
+
+.description {
+	padding-left: 4%;
+	width: 30%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	/*border: 1px solid red;*/
+}
+
+.description h1 {
+	font-size: 2.3rem;
+	margin-bottom: 0;
+}
+
+.description p {
+	color: gray;
+}
+
+.description span {
+	padding: .6rem 0;
+	display: block;
+}
+
+.description a {
+	background: black;
+	padding: 1.3rem 0;
+	display: block;
+	text-align: center;
+	width: 40%;
+	margin-top: 4%;
+	text-decoration: none;
+	color: white;
+	font-size: .8rem;
+	letter-spacing: .1rem;
+	transition: all .3s;
+}
+
+.description a:hover {
+	letter-spacing: .3rem;
+}
+
+.product {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(0.7);
+}
+
+footer {
+	position: relative;
+	bottom: -120px;
+	margin-left: 8%;
+	font-size: 0.8rem;
+	letter-spacing: 0.1rem;
+}
+
+.right {
+	display: flex;
+	flex-flow: column;
+	align-items: flex-end;
+	background: #ccc;
+}
+
+.tutorial-shop {
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+	width: 50%;
+	padding-top: 4%;
+}
+
+.tutorial-shop i,
+.tutorial-shop span {
+	cursor: pointer;
+}
+
+.menu-shop {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%)
+}
+
+.menu-shop h2 {
+	font-size: 2rem;
+	text-align: right;
+}
+
+.menu-shop li {
+	list-style-type: none;
+	text-align: right;
+	padding: 7px 0px;
+}
+
+.menu-shop li a {
+	text-decoration: none;
+	color: black;
+	transition: all .3s
+}
+
+.menu-shop li a:hover {
+	color: #7ada09;
+	text-shadow: 1px 1px 2px black;
+}
+
+footer {
+	position: absolute;
+	top: 90%;
+}
+
+/*Animations*/
+.marca.hide {
+	width: 0%;
+	opacity: 0;
+}
+
+.marca.show {
+	animation-name: marca;
+	animation-duration: .6s;
+	animation-delay: 1.1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes marca {
+	to {
+		width: 20%;
+		padding: 1.8rem;
+		opacity: 1;
+	}
+}
+
+.tutorial-shop.hide {
+	opacity: 0;
+	height: 0;
+}
+
+.tutorial-shop.show {
+	animation-name: tutorial-shop;
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	animation-delay: 1.7s;
+}
+
+@keyframes tutorial-shop {
+	to {
+		opacity: 1;
+		height: 0.3rem;
+	}
+}
+
+.description.hide {
+	top: 60%;
+	opacity: 0;
+}
+
+.description.show {
+	animation: description 1s forwards 1.7s
+}
+
+@keyframes description {
+	to {
+		top: 50%;
+		opacity: 1;
+	}
+}
+
+footer h3.hide {
+	opacity: 0;
+	transform: translateX(-50px)
+}
+
+footer h3.show {
+	animation: footerL 1s forwards 2s;
+}
+
+@keyframes footerL {
+	to {
+		transform: translate(0);
+		opacity: 1;
+	}
+}
+
+.menu-shop.hide {
+	opacity: 0;
+	top: 60%;
+}
+
+.menu-shop.show {
+	animation: shop 0.8s forwards 2.3s;
+}
+
+@keyframes shop {
+	to {
+		top: 50%;
+		opacity: 1;
+	}
+}
+
+.hide img {
+	opacity: 0;
+	transform: scale(0);
+	transition: all 1s;
+	transition-delay: 2.4s;
+}
+
+.show img {
+	opacity: 1;
+	transform: scale(1);
+	animation: float 0.8s infinite alternate;
+	transform: translateY(25px);
+}
+
+@keyframes float {
+	100% {
+		transform: translateY(-25px);
+	}
+}
+
+.right.hide {
+	width: 0;
+}
+
+.right.show {
+	animation-name: right;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in;
+}
+
+@keyframes right {
+	to {
+		width: 92%;
+		padding-right: 8%;
+	}
+}

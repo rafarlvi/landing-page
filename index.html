@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.1.96/css/materialdesignicons.min.css">
+	<title>Product</title>
+</head>
+
+<body>
+	<main>
+		<section class="left">
+			<div class="marca hide">
+				Marca
+			</div>
+			<div class="description hide">
+				<h1>Marca Pro Platinum</h1>
+				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, dicta. Quo similique sapiente
+					laudantium iste aliquam nesciunt, delectus eos nam repellat dolores aliquid, qui repudiandae
+					voluptates voluptate laborum magni modi.</p>
+				<span style="font-weight:bold">Price: USD $50</span>
+				<a href="#">BUY NOW</a>
+			</div>
+			<div class="product hide">
+				<img src="img/ball.png" alt="bola">
+			</div>
+		</section>
+		<section class="right hide">
+			<div class="tutorial-shop hide">
+				<span>
+					<i class="mdi mdi-play"></i>
+					Watch turotial
+				</span>
+				<i class="mdi mdi-cart"></i>
+			</div>
+			<nav class="menu-shop hide">
+				<h2>Shop</h2>
+				<ul>
+					<li><a href="#">Balls</a></li>
+					<li><a href="#">Football boots</a></li>
+					<li><a href="#">Socks</a></li>
+					<li><a href="#">Acessories</a></li>
+					<li><a href="#">View All</a></li>
+				</ul>
+			</nav>
+		</section>
+	</main>
+	<footer>
+		<h3 class="hide">MARCA PRO WHEREVER YOU GO</h3>
+	</footer>
+
+	<script>
+		const observer = new IntersectionObserver(entries => {
+			Array.from(entries).forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('show')
+				}
+			})
+		})
+		Array.from(document.querySelectorAll('.hide')).forEach(item => {
+			observer.observe(item)
+		})
+
+	</script>
+</body>
+
+</html>
